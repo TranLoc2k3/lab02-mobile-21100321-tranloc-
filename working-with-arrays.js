@@ -93,5 +93,10 @@ let ownersEatTooLittle = dogs.filter(
     dog => (dog.recommendedFood - dog.curFood) / dog.recommendedFood * 100 > 10
 ).flatMap(dog => dog.owners)
 
-console.log(ownersEatTooMuch);
-console.log(ownersEatTooLittle);
+// console.log(ownersEatTooMuch);
+// console.log(ownersEatTooLittle);
+
+// Challenge 4.4
+
+console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
