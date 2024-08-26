@@ -98,5 +98,17 @@ let ownersEatTooLittle = dogs.filter(
 
 // Challenge 4.4
 
-console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
-console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
+// console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
+// console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
+
+// Challenge 4.5
+
+dogs.forEach(
+    dog => {
+        let deltaFood = Math.abs(dog.curFood - dog.recommendedFood);
+        if (deltaFood / dog.recommendedFood * 100 > 10) {
+            console.log(dog, false);
+        }
+        else console.log(dog, true);
+    }
+)
