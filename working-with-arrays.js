@@ -63,5 +63,22 @@ dogs.forEach(
     dog => dog.recommendedFood = dog.weight ** 0.75 * 28
 )
 
-console.log("Information about dogs");
-console.log(dogs);
+// console.log("Information about dogs");
+// console.log(dogs);
+
+const dogSarah = dogs.filter(
+    dog => dog.owners.includes('Sarah')
+)
+dogSarah.forEach(
+    dog => {
+        let deltaFood = Math.abs(dog.curFood - dog.recommendedFood);
+        if (deltaFood / dog.recommendedFood * 100 > 10) {
+            if (dog.curFood > dog.recommendedFood) {
+                console.log("Eat to much")
+            }
+            else {
+                console.log("Eat too little")
+            }
+        }
+    }
+)
