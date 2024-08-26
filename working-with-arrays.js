@@ -29,7 +29,22 @@ function calcAverageHumanAge(ages) {
     return average;
 }
 
+// console.log("---- Data 1 ----");
+// console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
+// console.log("---- Data 2 ----");
+// console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
+
+
+// Coding challeng 3
+
+function calcAverageHumanAge2(ages) {
+    const average = ages.map(age => age <= 2 ? 2 * age: 16 + age + 4)
+                        .filter(age => age >= 18)
+                        .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+    return average;
+}
+
 console.log("---- Data 1 ----");
-console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
+console.log(calcAverageHumanAge2([5, 2, 4, 1, 15, 8, 3]));
 console.log("---- Data 2 ----");
-console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
+console.log(calcAverageHumanAge2([16, 6, 10, 5, 6, 1, 4]));
