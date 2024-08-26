@@ -44,7 +44,24 @@ function calcAverageHumanAge2(ages) {
     return average;
 }
 
-console.log("---- Data 1 ----");
-console.log(calcAverageHumanAge2([5, 2, 4, 1, 15, 8, 3]));
-console.log("---- Data 2 ----");
-console.log(calcAverageHumanAge2([16, 6, 10, 5, 6, 1, 4]));
+// console.log("---- Data 1 ----");
+// console.log(calcAverageHumanAge2([5, 2, 4, 1, 15, 8, 3]));
+// console.log("---- Data 2 ----");
+// console.log(calcAverageHumanAge2([16, 6, 10, 5, 6, 1, 4]));
+
+
+// Coding challeng 4
+
+const dogs = [
+    { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+    { weight: 8, curFood: 200, owners: ['Matilda'] },
+    { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+    { weight: 32, curFood: 340, owners: ['Michael'] }
+];
+
+dogs.forEach(
+    dog => dog.recommendedFood = dog.weight ** 0.75 * 28
+)
+
+console.log("Information about dogs");
+console.log(dogs);
