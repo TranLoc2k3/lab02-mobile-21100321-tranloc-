@@ -103,12 +103,18 @@ let ownersEatTooLittle = dogs.filter(
 
 // Challenge 4.5
 
-dogs.forEach(
-    dog => {
-        let deltaFood = Math.abs(dog.curFood - dog.recommendedFood);
-        if (deltaFood / dog.recommendedFood * 100 > 10) {
-            console.log(dog, false);
-        }
-        else console.log(dog, true);
-    }
-)
+// dogs.forEach(
+//     dog => {
+//         let deltaFood = Math.abs(dog.curFood - dog.recommendedFood);
+//         if (deltaFood / dog.recommendedFood * 100 > 10) {
+//             console.log(dog, false);
+//         }
+//         else console.log(dog, true);
+//     }
+// )
+
+
+// Challenge 4.8
+
+const dogsCopy = dogs.slice().sort((a, b) => a.recommendedFood - b.recommendedFood);
+console.log(dogsCopy);
