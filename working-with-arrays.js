@@ -69,16 +69,29 @@ dogs.forEach(
 const dogSarah = dogs.filter(
     dog => dog.owners.includes('Sarah')
 )
-dogSarah.forEach(
-    dog => {
-        let deltaFood = Math.abs(dog.curFood - dog.recommendedFood);
-        if (deltaFood / dog.recommendedFood * 100 > 10) {
-            if (dog.curFood > dog.recommendedFood) {
-                console.log("Eat to much")
-            }
-            else {
-                console.log("Eat too little")
-            }
-        }
-    }
-)
+// dogSarah.forEach(
+//     dog => {
+//         let deltaFood = Math.abs(dog.curFood - dog.recommendedFood);
+//         if (deltaFood / dog.recommendedFood * 100 > 10) {
+//             if (dog.curFood > dog.recommendedFood) {
+//                 console.log("Eat to much")
+//             }
+//             else {
+//                 console.log("Eat too little")
+//             }
+//         }
+//     }
+// )
+
+// Challenge 4.3
+
+let ownersEatTooMuch = dogs.filter(
+    dog => (dog.curFood - dog.recommendedFood) / dog.recommendedFood * 100 > 10
+).flatMap(dog => dog.owners)
+
+let ownersEatTooLittle = dogs.filter(
+    dog => (dog.recommendedFood - dog.curFood) / dog.recommendedFood * 100 > 10
+).flatMap(dog => dog.owners)
+
+console.log(ownersEatTooMuch);
+console.log(ownersEatTooLittle);
