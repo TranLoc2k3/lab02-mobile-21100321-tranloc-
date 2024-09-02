@@ -30,4 +30,18 @@ Array.prototype.myFilter = function (callback) {
     return result;
 }
 
-console.log("My filter method: ", arr.myFilter((el) => el > 10));
+// console.log("My filter method: ", arr.myFilter((el) => el > 10));
+
+
+// Handle map method in array.prototype
+
+Array.prototype.myMap = function (callback) {
+    let result = [];
+    for (let i = 0; i < this.length; i++) {
+        result.push(callback(this[i], i, this));
+    }
+    return result;
+}
+
+
+console.log("My map method: ", arr.myMap((el) => el * 2));
