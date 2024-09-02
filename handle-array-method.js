@@ -44,4 +44,18 @@ Array.prototype.myMap = function (callback) {
 }
 
 
-console.log("My map method: ", arr.myMap((el) => el * 2));
+// console.log("My map method: ", arr.myMap((el) => el * 2));
+
+
+
+// Handle reduce method in array.prototype
+
+Array.prototype.myReduce = function (callback, initialValue) {
+    let accumulator = initialValue || this[0];
+    for (let i = initialValue ? 0 : 1; i < this.length; i++) {
+        accumulator = callback(accumulator, this[i], i, this);
+    }
+    return accumulator;
+}
+
+console.log("My reduce method: ", arr.myReduce((acc, el) => acc + el, 0));
