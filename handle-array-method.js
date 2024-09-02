@@ -15,4 +15,19 @@ Array.prototype.myFind = function (callback) {
     return undefined;
 }
 
-console.log("My find method: ", arr.myFind((el) => el > 10));
+// console.log("My find method: ", arr.myFind((el) => el > 10));
+
+
+// Handle filter method in array.prototype
+
+Array.prototype.myFilter = function (callback) {
+    let result = [];
+    for (let i = 0; i < this.length; i++) {
+        if (callback(this[i], i, this)) {
+            result.push(this[i]);
+        }
+    }
+    return result;
+}
+
+console.log("My filter method: ", arr.myFilter((el) => el > 10));
